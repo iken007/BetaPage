@@ -1,2 +1,0 @@
-<br>
-<b>Fatal error</b>:  Trait 'ElementorPro\Modules\LoopFilter\Traits\Hierarchical_Taxonomy_Trait' not found in <b>D:\xampp7.4\htdocs\BetaPage\wp-content\plugins\pro-elements\modules\loop-filter\traits\taxonomy-filter-trait.php</b> on line <b>5</b><br>

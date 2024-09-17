@@ -1,2 +1,0 @@
-<br>
-<b>Fatal error</b>:  Trait 'Elementor\Core\Base\Traits\Shared_Widget_Controls_Trait' not found in <b>D:\xampp7.4\htdocs\BetaPage\wp-content\plugins\elementor\modules\link-in-bio\classes\render\render-base.php</b> on line <b>18</b><br>

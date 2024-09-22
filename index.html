@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .countdown {
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .subscribe-form input {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .subscribe-form button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            background-color: #ff5f5f;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #ff3b3b;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p, .countdown {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coming Soon!</h1>
+        <p>We're working hard to get our site up and running. Stay tuned!</p>
+        <div class="countdown" id="countdown">
+            <span class="days">00</span> days
+            <span class="hours">00</span> hours
+            <span class="minutes">00</span> minutes
+            <span class="seconds">00</span> seconds
+        </div>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the elements with id="countdown"
+            document.querySelector(".days").textContent = String(days).padStart(2, '0');
+            document.querySelector(".hours").textContent = String(hours).padStart(2, '0');
+            document.querySelector(".minutes").textContent = String(minutes).padStart(2, '0');
+            document.querySelector(".seconds").textContent = String(seconds).padStart(2, '0');
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").textContent = "We're live!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
